@@ -23,7 +23,7 @@ const TaskForm = ({ userId, onTaskAdded }) => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/tasks', {
+      const response = await axios.post(`https://finzarc-api.vercel.app/api/tasks`, {
         ...formData,
         userId
       });

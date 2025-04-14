@@ -12,7 +12,7 @@ const TaskList = ({ userId, taskUpdated }) => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/tasks/${userId}`);
+        const response = await axios.get(`https://finzarc-api.vercel.app/api/tasks/${userId}`);
         setTasks(response.data);
         setError('');
       } catch (err) {
@@ -34,7 +34,7 @@ const TaskList = ({ userId, taskUpdated }) => {
       const task = tasks.find(t => t._id === taskId);
       if (!task) return;
 
-      const response = await axios.put(`http://localhost:5000/api/tasks/${taskId}`, {
+      const response = await axios.put(`https://finzarc-api.vercel.app/api/tasks/${taskId}`, {
         completed: !task.completed
       });
 
@@ -51,7 +51,7 @@ const TaskList = ({ userId, taskUpdated }) => {
   // Delete task
   const handleDelete = async (taskId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/tasks/${taskId}`);
+      await axios.delete(`https://finzarc-api.vercel.app/api/tasks/${taskId}`);
       
       // Remove task from the list
       setTasks(tasks.filter(t => t._id !== taskId));

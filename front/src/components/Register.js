@@ -35,7 +35,7 @@ const Register = () => {
     setLoading(true);
 
     try {
-      await axios.post('http://localhost:5000/api/users/register', {
+      await axios.post(`https://finzarc-api.vercel.app/api/users/register`, {
         username: formData.username,
         password: formData.password
       });

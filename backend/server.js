@@ -7,7 +7,7 @@ const port = 5000;
 // Middleware
 app.use(
     cors({
-      origin: ["https://www.98fastbet.com"], 
+      origin: 'https://finzarc-front.vercel.app',
       methods: ['POST', 'GET', 'PUT', 'DELETE'], 
       credentials: true, 
     })
